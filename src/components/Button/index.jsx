@@ -1,5 +1,5 @@
 const borderSTYLE = 'border-2 bordder-almost-black rounded-lg'
-const filledSTYLE = 'text-almost-white bg-black rounded-lg font-bold py-4 px6 mx-0 hover:bg-transparent hover:text-almost-black border-2 border-almost-black'
+const filledSTYLE = 'text-white bg-black rounded-lg font-bold py-4 px6 mx-0 hover:bg-transparent hover:text-almost-black border-2 border-almost-black'
 
 export function Button({ children = '', hasBorder = false, isFilled = false}) {
     
