@@ -2,13 +2,16 @@ import {  Nav } from '../Nav'
 import {  NavMenu  } from '../Nav-menu'
 import {  COMPANY, FEATURES  } from './const'
 import {  Button  } from '../Button'
+import { MobileMenu } from '../Mobile-menu'
 
 import logo from '../../images/logo.svg'
 import iconMenu from '../../images/icon-menu.svg'
+import closeMenu from '../../images/icon-close-menu.svg'
+import { useState } from 'react'
 
 
 export function Header() {
-
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
  return (
    <header className='flex items-center'>
      <logoIcon />
@@ -27,9 +30,12 @@ export function Header() {
          <Button> Loggin </Button>
          <Button hasBorder={ true }> Register </Button>
        </div>
-       <div className="flex xl:hidden ml-auto cursor-pointer z-30">
-          <img src={iconMenu} alt="" />
+       <div 
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          className="flex xl:hidden ml-auto cursor-pointer z-30">
+          <img src={isMobileMenuOpen ? closeMenu : iconMenu} alt="" />
        </div>
+       <MobileMenu isOpen={ isMobileMenuOpen }/>
    </header>
   )
 }
